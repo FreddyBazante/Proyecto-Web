@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Administrador</title>
+		<script src="js/angular.min.js" charset="utf-8"></script>
+		<script src="js/angular-animate.min.js" charset="utf-8"></script>
+		<script src="js/angular-route.min.js" charset="utf-8"></script>
+		<script src="js/app.js" charset="utf-8"></script>
+		<script src="js/AdmAdministradorCtrl.js" charset="utf-8"></script>
+		<script src="js/AdmAdministradorSrv.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/estilo.css" charset="utf-8"/>
+		<link rel="stylesheet" href="css/w3.css" charset="utf-8"/>
+		<link rel="stylesheet" href="css/template.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome-4.6.3/css/font-awesome.css" />
+	</head>
+	<body  ng-app="moduloAplicacion" ng-controller="administradorControlador" class="w3-sand">
+		<nav class="w3-sidenav w3-light-grey" style="width:20%">
+			<h2 class="w3-center">Accesos</h2>
+				<ul class="">
+					<li class="w3-btn w3-blue-grey w3-input w3-group w3-center"><a class="w3-text-white w3-center" href="#/"> <i class="fa fa-home fa-2x"></i>Home</a></li>
+					<li class="w3-btn w3-blue-grey w3-input w3-group w3-center"><a class="w3-text-white w3-center" href="#/horario"> <i class="fa fa-hourglass-half fa-2x" ></i>Horario</a></li>
+					<li class="w3-btn w3-blue-grey w3-input w3-group w3-center"><a class="w3-text-white w3-center" href="#/especialidad"><i class="fa fa-stethoscope fa-2x"></i>Especialidades</a></li>
+					<li class="w3-btn w3-blue-grey w3-input w3-group w3-center"><a class="w3-text-white w3-center" href="#/registroAdministrador"><i class="fa fa-user-secret fa-2x"></i> Administrador</a></li>
+					<li class="w3-btn w3-blue-grey w3-input w3-group w3-center"><a class="w3-text-white w3-center" href="#/registroOdontologo"><i class="fa fa-user-md fa-2x"></i>Odontólogo</a></li>
+					<li class="w3-btn w3-blue-grey w3-input w3-group w3-center"><a class="w3-text-white w3-center" href="#/registroPaciente"> <i class="fa fa-user fa-2x"></i>Paciente</a></li>
+					<li class="w3-btn w3-blue-grey w3-input w3-group w3-center"><a class="w3-text-white w3-center" href="#/cerrarsesion">Cerrar Sesión <i class="fa fa-sign-out fa-2x"></i></a></li>
+				</ul>
+		</nav>
+		<div style="margin-left:25%">
+			<header class="page-header w3-sand">
+				<div class="logo-wrapper w3-center w3-sand">
+					<p>
+						<img alt="" class="logo-wrapper logo  " src="images/logo_fisepn.png" /><br>
+						<img alt="" class="logo-wrapper logo images " src="images/bucalcenter.png" /><br>
+						<label class="w3-center w3-text-blue-grey w3-text-shadow">BUCALCENTER</label>
+					</p>
+				</div>
+			</header>
+			
+			<div>
+				<ng-view></ng-view>
+			</div>
+			<footer class="w3-sand">
+				Copyright &copy; 2016<br/>Derechos reservados. EPN. <br/> Contactese a freddy.bazante@epn.edu.ec o jesus.guerra@epn.edu.ec
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Registro Horario</title>
+		<script src="../js/angular.min.js" charset="utf-8"></script>
+		<script src="../js/angular-animate.min.js" charset="utf-8"></script>
+		<script src="../js/angular-route.min.js" charset="utf-8"></script>
+		<script src="../js/app.js" charset="utf-8"></script>
+		<script src="../js/AdmAdministradorCtrl.js" charset="utf-8"></script>
+		<script src="../js/AdmAdministradorSrv.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="../css/estilo.css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/w3.css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/template.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-4.6.3/css/font-awesome.css" />
+	</head>
+	<body  ng-app="moduloAplicacion" ng-controller="administradorControlador" class="w3-sand">
+		<div class="w3-center w3-group">	
+			<form name="form3">
+				<fieldset>
+					<legend>Horarios</legend>	
+					<table class="table">
+						<tr class="tr">
+							<td class="td">HORA INICIO</td>
+							<td class="td">HORA FIN</td>
+							<td class="td">LUNES</td>
+							<td class="td">MARTES</td>
+							<td class="td">MIERCOLES</td>
+							<td class="td">JUEVES</td>
+							<td class="td">VIERNES</td>
+						</tr>
+						<tr class="tr">
+							<td class="td"><input type="time" class="myinput w3-input w3-group w3-center" name="f_horainicio" ng-model="horario.horainicio"></td>
+							<td class="td"><input type="time" class="myinput w3-input w3-group w3-center" name="f_horafin" ng-model="horario.horafin"></td>
+							<td class="td"><input type="time" class="myinput w3-input w3-group w3-center" name="f_horaLunes" ng-model="horario.horaLunes"></td>
+							<td class="td"><input type="time" class="myinput w3-input w3-group w3-center" name="f_horaMartes" ng-model="horario.horaMartes"></td>
+							<td class="td"><input type="time" class="myinput w3-input w3-group w3-center" name="f_horaMiercoles" ng-model="horario.horaMiercoles"></td>
+							<td class="td"><input type="time" class="myinput w3-input w3-group w3-center" name="f_horaJueves" ng-model="horario.horaJueves"></td>
+							<td class="td"><input type="time" class="myinput w3-input w3-group w3-center" name="f_horaViernes" ng-model="horario.horaViernes"></td>
+						</tr>
+						<tr class="tr">
+							<td colspan="7" align="center">
+								<button type="button" class="w3-btn btn-primary" ng-click="registrarHorarios()" ng-disabled="form3.$invalid" >Registrar</button>
+								<button type="button" class="btn w3-yellow" ng-click="actuzalizarHorarios()" ng-disabled="form3.$invalid" >Actualizar</button>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+				<div class="">
+					<input type="text" ng-model="valorDeBusqueda">
+					<button type="button" class="btn" ng-click="buscarHorarios()"><i class="fa fa-search"></i>Listar Horario</button>
+				</div>
+				<table id="valorDeBusqueda" class="w3-table">
+			    	<thead>
+			        	<td class="td"><a href ng-click="criterioOrdenH='idHorario'">ID</a></td>
+			        	<td class="td">HORA INICIO</td>
+						<td class="td">HORA FIN</td>
+						<td class="td">LUNES</td>
+						<td class="td">MARTES</td>
+						<td class="td">MIERCOLES</td>
+						<td class="td">JUEVES</td>
+						<td class="td">VIERNES</td>
+						<td class="td">OPCIONES</td>
+			      	</thead>
+			      	<tbody>
+			        	<tr ng-repeat="horario in horarios | orderBy:criterioOrdenH">
+					          <td class="td">
+					            {{horario.idHorario}}
+					          </td>
+					          <td class="td" >
+					            {{horario.horainicioHorario}}
+					          </td>
+					          <td class="td">
+					            {{horario.horafinHorario}}
+					          </td>
+					          <td class="td">
+					            {{horario.lunesHorario}}
+					          </td>
+					          <td class="td">
+					            {{horario.martesHorario}}
+					          </td>
+					          <td class="td">
+					            {{horario.miercolesHorario}}
+					          </td>
+					          <td class="td">
+					            {{horario.juevesHorario}}
+					          </td>
+					          <td class="td">
+					            {{horario.viernesHorario}}
+					          </td>
+					          <td class="td">
+					            <a class="w3-btn w3-green " href="vistasAdministrador/horario.html#?id={{horario.idHorario}}">Editar</a>
+					            <a class="w3-btn w3-red " href="eliminarHorario/id?={{horario.idHorario}}">Eliminar</a>
+					          </td>
+			       	 	</tr>
+			     	</tbody>
+			    </table>
+			</form>
+		</div>
+	</body>
+</html>

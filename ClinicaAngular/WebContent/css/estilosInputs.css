@@ -1,0 +1,14 @@
+input.ng-empty {
+	background:#aacccc
+}
+
+/* para las filas impares */
+table tr:nth-child(odd) th,td {
+    background-color: lightgrey;
+}
+
+
+/* para las filas paras */
+table tr:nth-child(even) td {
+    background-color: #f6f6f6;
+}
