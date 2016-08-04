@@ -1,10 +1,10 @@
 var app = angular.module("moduloAplicacion");
 
-app.controller("administradorControlador", function($scope,AdminAdministradorSrv){
+app.controller("administradorControlador", function($scope,$location,AdminAdministradorSrv){
 	$scope.valorDeBusqueda="";
 	$scope.criterioOrdenH="idHorario";
 	$scope.errorMsg="Resultado";
-	
+	$scope.param = $location.search();
 	//HORARIOS
 	//CREAR
     $scope.registrarHorarios = function (){
@@ -39,7 +39,18 @@ app.controller("administradorControlador", function($scope,AdminAdministradorSrv
 	    	   }
 	    	);
 	    };
-	
+	//ELIMINAR
+	    $scope.eliminarHorarios = function (){
+	    	AdminAdministradorSrv.eliminarHorario($scope.horario,
+	    	   function(mensajeExito){
+	    		   $scope.mensaje=mensajeExito;
+	    	   },
+	    	   function(mensajeError){
+	    		   $scope.mensaje=mensajeError;
+	    	   }
+	    	);
+	    	//$location.url("/administrador");
+	    };
 	//ESPECIALIDADES
 	$scope.criterioOrdenE="nombreEspecialidad";
 	$scope.buscarEspecialidades = function(){

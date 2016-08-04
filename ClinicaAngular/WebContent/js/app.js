@@ -7,6 +7,11 @@ aplicacion.config(function($routeProvider){
                controllerAs: "vm",
                templateUrl: "vistasAdministrador/home.html"
            })
+           .when("/administrador", {
+               controller: "administradorControlador",
+               controllerAs: "vm",
+               templateUrl: "Administrador.html"
+           })
            .when("/horario", {
                controller: "administradorControlador",
                controllerAs: "vm",
