@@ -25,13 +25,18 @@
 		<form name="form2">
 	       	<fieldset style="width: 50%">
 				<legend>Paciente</legend>
-				
-	            	<table>
+				   	<table>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Modo: </label></td>
 							<td>
-								<input type="text" name="id" value="P" placeholder="PACIENTE" class="w3-select" ng-model="id" disabled required>
+								<select name="f_modo" class="w3-select" ng-model="paciente.tipoUsr" required>
+									<option value="P" >PACIENTE </option>
+								</select>
 							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form2.f_modo.$pristine && form2.f_modo.$error.required">El modo es requerido</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Nombre de Usuario: </label></td>
@@ -39,7 +44,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><div class="msgError" ng-show="form2.f_user.$dirty && form2.f_user.$error.required">El nombre usuario es requerido</div></td>
+							<td><div class="msgError" ng-show="form2.f_user.$pristine && form2.f_user.$error.required">El nombre usuario es requerido</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Contraseña: </label></td>
@@ -47,7 +52,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><div class="msgError" ng-show="form2.f_password1.$dirty && form2.f_password1.$error.required">La contraseña es requerida</div></td>
+							<td><div class="msgError" ng-show="form2.f_password1.$pristine && form2.f_password1.$error.required">La contraseña es requerida</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Confirmar contraseña: </label></td>
@@ -55,7 +60,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><div class="msgError" ng-show="form2.f_password2.$dirty && form2.f_password2.$error.required">La confirmación contraseña es requerida</div></td>
+							<td><div class="msgError" ng-show="form2.f_password2.$pristine && form2.f_password2.$error.required">La confirmación contraseña es requerida</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Primer Nombre: </label></td>
@@ -63,7 +68,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><div class="msgError" ng-show="form2.f_nombre1.$dirty && form2.f_nombre1.$error.required">El nombre es requerido</div></td>
+							<td><div class="msgError" ng-show="form2.f_nombre1.$pristine && form2.f_nombre1.$error.required">El nombre es requerido</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Segundo Nombre: </label></td>
@@ -75,7 +80,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><div class="msgError" ng-show="form2.f_apellido1.$dirty && form2.f_apellido1.$error.required">El apellido es requerido</div></td>
+							<td><div class="msgError" ng-show="form2.f_apellido1.$pristine && form2.f_apellido1.$error.required">El apellido es requerido</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Segundo Apellido: </label></td>
@@ -87,7 +92,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><div class="msgError" ng-show="form2.f_ci.$dirty && form2.f_ci.$error.required">La cédula es requerida</div></td>
+							<td><div class="msgError" ng-show="form2.f_ci.$pristine && form2.f_ci.$error.required">La cédula es requerida</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Fecha de nacimiento: </label></td>
@@ -107,7 +112,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><div class="msgError" ng-show="form2.f_fono_dom.$dirty && form2.f_fono_dom.$error.required">El teléfono es requerido</div></td>
+							<td><div class="msgError" ng-show="form2.f_fono_dom.$pristine && form2.f_fono_dom.$error.required">El teléfono es requerido</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Teléfono Celular: </label></td>

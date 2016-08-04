@@ -22,14 +22,15 @@
 					<table>
 						<tr>
 							<td  class="w3-btn w3-input w3-group w3-center">Ingrese la Especialidad:</td>
-							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_especialidad" ng-model="especialidad" required></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_especialidad" ng-model="especialidad.nombreEspecialidad" required></td>
 						</tr>
 						<tr>
 							<td colspan="2" align="center">
-								<button type="submit" ng-disabled="form4.$invalid" class="w3-btn btn-primary">Registrar</button>
+								<button type="button" ng-disabled="form4.$invalid" class="w3-btn btn-primary">Registrar</button>
 							</td>
 						</tr>
 					</table>
+					<div class="msgError" ng-show="form4.f_especialidad.$pristine && form4.f_especialidad.$error.required">Especialidad es requerido</div>
 				</fieldset>
 				<div class="">
 					<input type="text" ng-model="valorDeBusqueda">

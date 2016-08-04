@@ -1,10 +1,165 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Registro Especialdiad</title>
+		<script src="../js/angular.min.js" charset="utf-8"></script>
+		<script src="../js/angular-animate.min.js" charset="utf-8"></script>
+		<script src="../js/angular-route.min.js" charset="utf-8"></script>
+		<script src="../js/app.js" charset="utf-8"></script>
+		<script src="../js/AdmAdministradorCtrl.js" charset="utf-8"></script>
+		<script src="../js/AdmAdministradorSrv.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="../css/estilo.css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/w3.css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/template.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-4.6.3/css/font-awesome.css" />
+	</head>
+	<body ng-app="moduloAplicacion" ng-controller="administradorControlador" class="w3-sand">
+		<div class="w3-center w3-group">
+			<form name="form4">
+				<fieldset>
+					<legend>Administradores</legend>	
+					<table>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Modo:</label></td>
+							<td>
+								<select name="f_modo" class="w3-select" ng-model="administrador.tipoUsr" required>
+									<option value="A" >ADMINISTRADOR </option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Nombre de Usuario:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_user" ng-model="administrador.nomreUsr" required></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Contraseña:</label></td>
+							<td><input type="password" class="myinput w3-input w3-group w3-center" name="f_password1" ng-model="administrador.passwordUsr" required></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Confirmar contraseña:</label></td>
+							<td><input type="password" class="myinput w3-input w3-group w3-center" name="f_password2" ng-model="administrador.confirmPasswordUsr" required></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Primer Nombre:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_nombre1" ng-model="administrador.nombre1Usr" required></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Segundo Nombre:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_nombre2" ng-model="administrador.nombre2Usr"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Primer Apellido:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_apellido1" ng-model="administrador.apellido1Usr" required></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Segundo Apellido:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_apellido2" ng-model="administrador.apellido2Usr"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Cédula de identidad:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_ci" ng-model="administrador.cedulaUsr" required></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Fecha de nacimiento:</label></td>
+							<td><input type="date" class="myinput w3-input w3-group w3-center" name="f_fecha_nac" ng-model="administrador.fecnacUsr"/></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Lugar de nacimiento:</label></td>
+							<td><input type="text" name="f_lugar_nac" value="<%=lugarnacimiento %>"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Dirección:</label></td>
+							<td><input type="text" name="f_direccion" value="<%=direccion %>"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Teléfono Domicilio:</label></td>
+							<td><input type="text" name="f_fono_dom" value="<%=telfdomicilio %>" required></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Teléfono Celular:</label></td>
+							<td><input type="text" name="f_fono_cel" value="<%=telfcelular %>"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Edad:</label></td>
+							<td><input type="number" name="f_edad" value="<%=edad %>"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Género:</label></td>
+							<td>
+								<select name="f_genero">
+									<option value="M">MASCULINO</option>
+									<option value="F">FEMENINO</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Correo electrónico:</label></td>
+							<td><input type="email" name="f_correo_e" value="<%=correo %>" required></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Estado Civil:</label></td>
+							<td>
+								<select name="f_estado_civ">
+									<option value="SOLTERO">SOLTERO</option>
+									<option value="CASADO">CASADO</option>
+									<option value="VIUDO">VIUDO</option>
+									<option value="DIVORCIADO">DIVORCIADO</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Ocupación:</label></td>
+							<td>
+								<select name="f_profesion">
+									<option value="INGENIERIA">INGENIERIA</option>
+									<option value="INVESTIGACION">INVESTIGACION</option>
+									<option value="ESTUDIANTE">ESTUDIANTE</option>
+									<option value="ODONTOLOGO">ODONTÓLOGO</option>
+									<option value="OTROS">OTROS</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Estado:</label></td>
+							<td>
+								<input type="radio" name="Estado" value="1" />Activo<br>
+								<input type="radio" name="Estado" value="0" />Inactivo</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<button type="button" ng-disabled="form4.$invalid" class="w3-btn btn-primary">Registrar</button>
+							</td>
+						</tr>
+					</table>
+					<div class="msgError" ng-show="form4.f_especialidad.$pristine && form4.f_especialidad.$error.required">Especialidad es requerido</div>
+				</fieldset>
+				<div class="">
+					<input type="text" ng-model="valorDeBusqueda">
+					<button type="button" class="btn" ng-click="buscarEspecialidades()"><i class="fa fa-search"></i>Listar Especialidad</button>
+				</div>
+				<table id="valorDeBusqueda" class="w3-table">
+			    	<thead>
+			        	<td class="td"><a href ng-click="criterioOrdenE='idEspecialidad'">ID</a></td>
+						<td class="td"><a href ng-click="criterioOrdenE='nombreEspecialidad'">NOMBRE ESPECIALIDAD</a></td>
+						<td class="td">OPCIONES</td>
+			      	</thead>
+			      	<tbody>
+			        	<tr ng-repeat="especialidad in especialidades | orderBy:criterioOrdenE">
+					          <td class="td">
+					            {{especialidad.idEspecialidad}}
+					          </td>
+					          <td class="td">
+					            {{especialidad.nombreEspecialidad}}
+					          </td>
+					          <td class="td">
+					            <a class="w3-btn w3-green " href="vistasAdministrador/editarEspecialidad.html#?id={{especialidad.idEspecialidad}}"><i class="fa fa-edit"></i>Editar</a>
+					            <a  class="w3-btn w3-red " href="vistasAdministrador/eliminarEspecialidad.html#?id={{especialidad.idEspecialidad}}"><i class="fa fa-trash"></i>Eliminar</a>
+					          </td>
+			       	 	</tr>
+			     	</tbody>
+			    </table>
+			</form>
+		</div>
+	</body>
 </html>

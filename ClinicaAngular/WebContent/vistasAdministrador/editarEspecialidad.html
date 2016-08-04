@@ -35,6 +35,8 @@
 							</td>
 						</tr>
 					</table>
+					<div class="msgError" ng-show="form4.f_id.$pristine && form4.f_id.$error.required">ID es requerido</div>
+					<div class="msgError" ng-show="form4.f_especialidad.$pristine && form4.f_especialidad.$error.required">Especialidad es requerido</div>
 				</fieldset>
 			</form>
 		</div>
