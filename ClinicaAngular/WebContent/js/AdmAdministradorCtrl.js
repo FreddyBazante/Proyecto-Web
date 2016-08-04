@@ -10,9 +10,11 @@ app.controller("administradorControlador", function($scope,$location,AdminAdmini
     $scope.registrarHorarios = function (){
     	AdminAdministradorSrv.registrarHorarios($scope.horario,
     	   function(mensajeExito){
-    		   $scope.mensaje=mensajeExito;
+    			console.log("Ctrl exito " + $scope.horario);
+    			$scope.mensaje=mensajeExito;
     	   },
     	   function(mensajeError){
+    		   console.log("Ctrl error " + $scope.horario);
     		   $scope.mensaje=mensajeError;
     	   }
     	);
