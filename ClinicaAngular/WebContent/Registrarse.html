@@ -40,7 +40,7 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Nombre de Usuario: </label></td>
-							<td><input type="text" name="f_user" id="f_user" ng-model="nombreUsuario" class="myinput w3-input w3-group" required></td>
+							<td><input type="text" name="f_user" id="f_user" ng-model="paciente.nomreUsr" class="myinput w3-input w3-group" required></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -48,7 +48,7 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Contraseña: </label></td>
-							<td><input type="password" name="f_password1"  id="f_password1" ng-model="password1" class="myinput w3-input w3-group" required></td>
+							<td><input type="password" name="f_password1"  id="f_password1" ng-model="paciente.passwordUsr" class="myinput w3-input w3-group" required></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -56,7 +56,7 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Confirmar contraseña: </label></td>
-							<td><input type="password" name="f_password2"  id="f_password2" ng-model="password2" class="myinput w3-input w3-group" required></td>
+							<td><input type="password" name="f_password2"  id="f_password2" ng-model="paciente.confirmPasswordUsr" class="myinput w3-input w3-group" required></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -64,7 +64,7 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Primer Nombre: </label></td>
-							<td><input type="text" name="f_nombre1" id="f_nombre1" ng-model="nombre1" class="myinput w3-input w3-group" required></td>
+							<td><input type="text" name="f_nombre1" id="f_nombre1" ng-model="paciente.nombre1Usr" class="myinput w3-input w3-group" required></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -72,11 +72,11 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Segundo Nombre: </label></td>
-							<td><input type="text" name="f_nombre2" id="f_nombre2" ng-model="nombre2" class="myinput w3-input w3-group"></td>
+							<td><input type="text" name="f_nombre2" id="f_nombre2" ng-model="paciente.nombre2Usr" class="myinput w3-input w3-group"></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Primer Apellido: </label></td>
-							<td><input type="text" name="f_apellido1" id="f_apellido1" ng-model="apellido1" class="myinput w3-input w3-group" required></td>
+							<td><input type="text" name="f_apellido1" id="f_apellido1" ng-model="paciente.apellido1Usr" class="myinput w3-input w3-group" required></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -84,11 +84,11 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Segundo Apellido: </label></td>
-							<td><input type="text" name="f_apellido2" id="f_apellido2" ng-model="apelldo2" class="myinput w3-input w3-group"></td>
+							<td><input type="text" name="f_apellido2" id="f_apellido2" ng-model="paciente.apellido2Usr" class="myinput w3-input w3-group"></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Cedula de identidad: </label></td>
-							<td><input type="text" name="f_ci" id="f_ci" ng-model="cedula" class="myinput w3-input w3-group" required></td>
+							<td><input type="text" name="f_ci" id="f_ci" ng-model="paciente.cedulaUsr" class="myinput w3-input w3-group" required></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -96,19 +96,19 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Fecha de nacimiento: </label></td>
-							<td><input type="date" name="f_fecha_nac" id="f_fecha_nac" ng-model="fechaNacimiento" class="myinput w3-input w3-group" /></td>
+							<td><input type="date" name="f_fecha_nac" id="f_fecha_nac" ng-model="paciente.fecnacUsr" class="myinput w3-input w3-group" /></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Lugar de nacimiento: </label></td>
-							<td><input type="text" name="f_lugar_nac" id="f_lugar_nac" ng-model="lugarNacimiento" class="myinput w3-input w3-group"></td>
+							<td><input type="text" name="f_lugar_nac" id="f_lugar_nac" ng-model="paciente.lugarnacUsr" class="myinput w3-input w3-group"></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Dirección: </label></td>
-							<td><input type="text" name="f_direccion" id="f_direccion" ng-model="direccion" class="myinput w3-input w3-group"></td>
+							<td><input type="text" name="f_direccion" id="f_direccion" ng-model="paciente.direccionUsr" class="myinput w3-input w3-group"></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Teléfono Domicilio: </label></td>
-							<td><input type="text" name="f_fono_dom" id="f_fono_dom" ng-model="telefonoDomicilio" class="myinput w3-input w3-group" required></td>
+							<td><input type="text" name="f_fono_dom" id="f_fono_dom" ng-model="paciente.telfdomUsr" class="myinput w3-input w3-group" required></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -116,11 +116,11 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Teléfono Celular: </label></td>
-							<td><input type="text" name="f_fono_cel" id="f_fono_cel" ng-model="telefonoCelular" class="myinput w3-input w3-group"></td>
+							<td><input type="text" name="f_fono_cel" id="f_fono_cel" ng-model="paciente.telfcelUsr" class="myinput w3-input w3-group"></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Edad: </label></td>
-							<td><input type="number" name="f_edad" id="f_edad" min="0" max="1000" ng-model="edad" class="myinput w3-input w3-group"></td>
+							<td><input type="number" name="f_edad" id="f_edad" min="0" max="1000" ng-model="paciente.edadUsr" class="myinput w3-input w3-group"></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -133,7 +133,7 @@
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Género: </label></td>
 							<td>
-								<select name="f_genero" id="f_genero" ng-model="genero" class="w3-select">
+								<select name="f_genero" id="f_genero" ng-model="paciente.sexoUsr" class="w3-select">
 									<option value="M" >MASCULINO</option>
 									<option value="F" >FEMENINO</option>
 								</select>
@@ -141,7 +141,7 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Correo electrónico: </label></td>
-							<td><input type="email" name="f_correo_e" id="f_correo_e" ng-model="correoElectronico" class="myinput w3-input w3-group" required></td>
+							<td><input type="email" name="f_correo_e" id="f_correo_e" ng-model="paciente.correoeUsr" class="myinput w3-input w3-group" required></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -150,7 +150,7 @@
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Estado Civil: </label></td>
 							<td>
-								<select name="f_estado_civ" id="f_estado_civ" ng-model="estadoCivil" class="w3-select">
+								<select name="f_estado_civ" id="f_estado_civ" ng-model="paciente.estadocivilUsr" class="w3-select">
 									<option value="SOLTERO">SOLTERO</option>
 									<option value="CASADO">CASADO</option>
 									<option value="VIUDO">VIUDO</option>
@@ -161,7 +161,7 @@
 						<tr>
 							<td><label class="w3-btn w3-blue-grey w3-input w3-group">Ocupación: </label></td>
 							<td>
-								<select name="f_ocupacion" id="f_ocupacion" ng-model="ocupacion" class="w3-select">
+								<select name="f_ocupacion" id="f_ocupacion" ng-model="paciente.ocupacionPaciente" class="w3-select">
 									<option value="INGENIERIA">INGENIERIA</option>
 									<option value="INVESTIGACION">INVESTIGACION</option>
 									<option value="ESTUDIANTE">ESTUDIANTE</option>
