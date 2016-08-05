@@ -29,20 +29,40 @@
 							</td>
 						</tr>
 						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_modo.$pristine && form4.f_modo.$error.required">Modo es requerido</div></td>
+						</tr>
+						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Nombre de Usuario:</label></td>
 							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_user" ng-model="administrador.nomreUsr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_user.$pristine && form4.f_user.$error.required">Nombre de usuario es requerido</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Contraseña:</label></td>
 							<td><input type="password" class="myinput w3-input w3-group w3-center" name="f_password1" ng-model="administrador.passwordUsr" required></td>
 						</tr>
 						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_password1.$pristine && form4.f_password1.$error.required">Contraseña es requerido</div></td>
+						</tr>
+						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Confirmar contraseña:</label></td>
 							<td><input type="password" class="myinput w3-input w3-group w3-center" name="f_password2" ng-model="administrador.confirmPasswordUsr" required></td>
 						</tr>
 						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_password2.$pristine && form4.f_password2.$error.required">Confirmación es requerido</div></td>
+						</tr>
+						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Primer Nombre:</label></td>
 							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_nombre1" ng-model="administrador.nombre1Usr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_nombre1.$pristine && form4.f_nombre1.$error.required">Primer nombre es requerido</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Segundo Nombre:</label></td>
@@ -53,6 +73,10 @@
 							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_apellido1" ng-model="administrador.apellido1Usr" required></td>
 						</tr>
 						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_apellido1.$pristine && form4.f_apellido1.$error.required">Primer apellido es requerido</div></td>
+						</tr>
+						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Segundo Apellido:</label></td>
 							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_apellido2" ng-model="administrador.apellido2Usr"></td>
 						</tr>
@@ -61,33 +85,49 @@
 							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_ci" ng-model="administrador.cedulaUsr" required></td>
 						</tr>
 						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_ci.$pristine && form4.f_ci.$error.required">Cédula es requerido</div></td>
+						</tr>
+						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Fecha de nacimiento:</label></td>
 							<td><input type="date" class="myinput w3-input w3-group w3-center" name="f_fecha_nac" ng-model="administrador.fecnacUsr"/></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Lugar de nacimiento:</label></td>
-							<td><input type="text" name="f_lugar_nac" value="<%=lugarnacimiento %>"></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_lugar_nac" ng-model="administrador.lugarnacUsr"></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Dirección:</label></td>
-							<td><input type="text" name="f_direccion" value="<%=direccion %>"></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_direccion" ng-model="administrador.direccionUsr"></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Teléfono Domicilio:</label></td>
-							<td><input type="text" name="f_fono_dom" value="<%=telfdomicilio %>" required></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_fono_dom" ng-model="administrador.telfdomUsr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_fono_dom.$pristine && form4.f_fono_dom.$error.required">Teléfono es requerido</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Teléfono Celular:</label></td>
-							<td><input type="text" name="f_fono_cel" value="<%=telfcelular %>"></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_fono_cel" ng-model="administrador.telfcelUsr"></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Edad:</label></td>
-							<td><input type="number" name="f_edad" value="<%=edad %>"></td>
+							<td><input type="number" class="myinput w3-input w3-group w3-center" min="0" max="1000" name="f_edad" ng-model="administrador.edadUsr"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_edad.$error.max">El valor no debe ser mayor que 1000</div></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_edad.$error.min">El valor no debe ser menor que 0</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Género:</label></td>
 							<td>
-								<select name="f_genero">
+								<select name="f_genero" class="w3-select" ng-model="administrador.sexoUsr">
 									<option value="M">MASCULINO</option>
 									<option value="F">FEMENINO</option>
 								</select>
@@ -95,12 +135,20 @@
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Correo electrónico:</label></td>
-							<td><input type="email" name="f_correo_e" value="<%=correo %>" required></td>
+							<td><input type="email" class="myinput w3-input w3-group w3-center" name="f_correo_e" ng-model="administrador.correoeUsr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_correo_e.$error.email">Formato de correo <b>ejemplo@dominio.com</b></div></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show=" form4.f_correo_e.$pristine && form4.f_correo_e.$error.required">Correo eléctrónico es requerido</div></td>
 						</tr>
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Estado Civil:</label></td>
 							<td>
-								<select name="f_estado_civ">
+								<select name="f_estado_civ" class="w3-select" ng-model="administrador.estadocivilUsr">
 									<option value="SOLTERO">SOLTERO</option>
 									<option value="CASADO">CASADO</option>
 									<option value="VIUDO">VIUDO</option>
@@ -111,7 +159,7 @@
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Ocupación:</label></td>
 							<td>
-								<select name="f_profesion">
+								<select name="f_profesion" class="w3-select" ng-model="administrador.ocupacionAdministrador">
 									<option value="INGENIERIA">INGENIERIA</option>
 									<option value="INVESTIGACION">INVESTIGACION</option>
 									<option value="ESTUDIANTE">ESTUDIANTE</option>
@@ -123,8 +171,8 @@
 						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Estado:</label></td>
 							<td>
-								<input type="radio" name="Estado" value="1" />Activo<br>
-								<input type="radio" name="Estado" value="0" />Inactivo</td>
+								<input type="radio" name="Estado" class="w3-select" value="1" ng-model="administrador.estadoUsr" />Activo<br>
+								<input type="radio" name="Estado" class="w3-select" value="0" ng-model="administrador.estadoUsr" />Inactivo</td>
 						</tr>
 						<tr>
 							<td colspan="2" align="center">
@@ -132,29 +180,56 @@
 							</td>
 						</tr>
 					</table>
-					<div class="msgError" ng-show="form4.f_especialidad.$pristine && form4.f_especialidad.$error.required">Especialidad es requerido</div>
 				</fieldset>
 				<div class="">
 					<input type="text" ng-model="valorDeBusqueda">
-					<button type="button" class="btn" ng-click="buscarEspecialidades()"><i class="fa fa-search"></i>Listar Especialidad</button>
+					<button type="button" class="btn" ng-click="buscarAdministradores()"><i class="fa fa-search"></i>Listar Administrador</button>
 				</div>
 				<table id="valorDeBusqueda" class="w3-table">
 			    	<thead>
-			        	<td class="td"><a href ng-click="criterioOrdenE='idEspecialidad'">ID</a></td>
-						<td class="td"><a href ng-click="criterioOrdenE='nombreEspecialidad'">NOMBRE ESPECIALIDAD</a></td>
+			        	<td class="td"><a href ng-click="criterioOrdenA='idUsr'">ID</a></td>
+						<td class="td">MODO</td>
+						<td class="td"><a href ng-click="criterioOrdenA='nomreUsr'">USUARIO</a></td>
+						<td class="td">CONTRASEÑA</td>
+						<td class="td"><a href ng-click="criterioOrdenA='nombre1Usr'">PRIMER NOMBRE</a></td>
+						<td class="td"><a href ng-click="criterioOrdenA='apellido1Usr'">PRIMER APELLIDO</a></td>
+						<td class="td">CEDULA DE IDENTIDAD</td>
+						<td class="td">PROFESION</td>
+						<td class="td">ESTADO</td>
 						<td class="td">OPCIONES</td>
 			      	</thead>
 			      	<tbody>
-			        	<tr ng-repeat="especialidad in especialidades | orderBy:criterioOrdenE">
+			        	<tr ng-repeat="administrador in administradores | orderBy:criterioOrdenA">
 					          <td class="td">
-					            {{especialidad.idEspecialidad}}
+					            {{especialidad.idUsr}}
 					          </td>
 					          <td class="td">
-					            {{especialidad.nombreEspecialidad}}
+					            {{administrador.tipoUsr}}
 					          </td>
 					          <td class="td">
-					            <a class="w3-btn w3-green " href="vistasAdministrador/editarEspecialidad.html#?id={{especialidad.idEspecialidad}}"><i class="fa fa-edit"></i>Editar</a>
-					            <a  class="w3-btn w3-red " href="vistasAdministrador/eliminarEspecialidad.html#?id={{especialidad.idEspecialidad}}"><i class="fa fa-trash"></i>Eliminar</a>
+					            {{administrador.nomreUsr}}
+					          </td>
+					          <td class="td">
+					            {{administrador.passwordUsr}}
+					          </td>
+					          <td class="td">
+					            {{administrador.nombre1Usr}}
+					          </td>
+					          <td class="td">
+					            {{administrador.apellido1Usr}}
+					          </td>
+					          <td class="td">
+					            {{administrador.cedulaUsr}}
+					          </td>
+					          <td class="td">
+					            {{administrador.ocupacionAdministrador}}
+					          </td>
+					          <td class="td">
+					            {{administrador.estadoUsr}}
+					          </td>
+					          <td class="td">
+					            <a class="w3-btn w3-green " href="vistasAdministrador/editarAdministrador.html#?id={{administrador.idUsr}}"><i class="fa fa-edit"></i>Editar</a>
+					            <a  class="w3-btn w3-red " href="vistasAdministrador/eliminarAdministrador.html#?id={{especialidad.idUsr}}"><i class="fa fa-trash"></i>Eliminar</a>
 					          </td>
 			       	 	</tr>
 			     	</tbody>
