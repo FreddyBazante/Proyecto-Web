@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Registro Especialdiad</title>
+		<title>Registro Administrador</title>
 		<script src="../js/angular.min.js" charset="utf-8"></script>
 		<script src="../js/angular-animate.min.js" charset="utf-8"></script>
 		<script src="../js/angular-route.min.js" charset="utf-8"></script>
@@ -201,7 +201,7 @@
 			      	<tbody>
 			        	<tr ng-repeat="administrador in administradores | orderBy:criterioOrdenA">
 					          <td class="td">
-					            {{especialidad.idUsr}}
+					            {{administrador.idUsr}}
 					          </td>
 					          <td class="td">
 					            {{administrador.tipoUsr}}

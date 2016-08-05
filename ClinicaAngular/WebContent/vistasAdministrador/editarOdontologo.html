@@ -1,10 +1,206 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Editar Odontólogo</title>
+		<script src="../js/angular.min.js" charset="utf-8"></script>
+		<script src="../js/angular-animate.min.js" charset="utf-8"></script>
+		<script src="../js/angular-route.min.js" charset="utf-8"></script>
+		<script src="../js/app.js" charset="utf-8"></script>
+		<script src="../js/AdmAdministradorCtrl.js" charset="utf-8"></script>
+		<script src="../js/AdmAdministradorSrv.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="../css/estilo.css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/w3.css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/template.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-4.6.3/css/font-awesome.css" />
+	</head>
+	<body ng-app="moduloAplicacion" ng-controller="administradorControlador" class="w3-sand">
+		<div class="w3-center w3-group">
+			<form name="form4">
+				<fieldset>
+					<legend>Odontólogos</legend>	
+					<table>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">ID:</label></td>
+							<td>
+								<input type="text" class="myinput w3-input w3-group w3-center" name="f_id" disabled required ng-model="odontologo.idUsr">
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_id.$error.required">ID es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Modo:</label></td>
+							<td>
+								<select name="f_modo" class="w3-select" ng-model="odontologo.tipoUsr" required>
+									<option value="O" >ODONTOLOGO </option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_modo.$pristine && form4.f_modo.$error.required">Modo es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Nombre de Usuario:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_user" ng-model="odontologo.nomreUsr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_user.$pristine && form4.f_user.$error.required">Nombre de usuario es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Contraseña:</label></td>
+							<td><input type="password" class="myinput w3-input w3-group w3-center" name="f_password1" ng-model="odontologo.passwordUsr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_password1.$pristine && form4.f_password1.$error.required">Contraseña es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Confirmar contraseña:</label></td>
+							<td><input type="password" class="myinput w3-input w3-group w3-center" name="f_password2" ng-model="odontologo.confirmPasswordUsr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_password2.$pristine && form4.f_password2.$error.required">Confirmación es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Primer Nombre:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_nombre1" ng-model="odontologo.nombre1Usr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_nombre1.$pristine && form4.f_nombre1.$error.required">Primer nombre es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Segundo Nombre:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_nombre2" ng-model="odontologo.nombre2Usr"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Primer Apellido:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_apellido1" ng-model="odontologo.apellido1Usr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_apellido1.$pristine && form4.f_apellido1.$error.required">Primer apellido es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Segundo Apellido:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_apellido2" ng-model="odontologo.apellido2Usr"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Cédula de identidad:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_ci" ng-model="odontologo.cedulaUsr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_ci.$pristine && form4.f_ci.$error.required">Cédula es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Fecha de nacimiento:</label></td>
+							<td><input type="date" class="myinput w3-input w3-group w3-center" name="f_fecha_nac" ng-model="odontologor.fecnacUsr"/></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Lugar de nacimiento:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_lugar_nac" ng-model="odontologo.lugarnacUsr"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Dirección:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_direccion" ng-model="odontologo.direccionUsr"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Teléfono Domicilio:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_fono_dom" ng-model="odontologo.telfdomUsr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_fono_dom.$pristine && form4.f_fono_dom.$error.required">Teléfono es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Teléfono Celular:</label></td>
+							<td><input type="text" class="myinput w3-input w3-group w3-center" name="f_fono_cel" ng-model="odontologo.telfcelUsr"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Edad:</label></td>
+							<td><input type="number" class="myinput w3-input w3-group w3-center" min="0" max="1000" name="f_edad" ng-model="odontologo.edadUsr"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_edad.$error.max">El valor no debe ser mayor que 1000</div></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_edad.$error.min">El valor no debe ser menor que 0</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Género:</label></td>
+							<td>
+								<select name="f_genero" class="w3-select" ng-model="odontologo.sexoUsr">
+									<option value="M">MASCULINO</option>
+									<option value="F">FEMENINO</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Correo electrónico:</label></td>
+							<td><input type="email" class="myinput w3-input w3-group w3-center" name="f_correo_e" ng-model="odontologo.correoeUsr" required></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_correo_e.$error.email">Formato de correo <b>ejemplo@dominio.com</b></div></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show=" form4.f_correo_e.$pristine && form4.f_correo_e.$error.required">Correo eléctrónico es requerido</div></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Estado Civil:</label></td>
+							<td>
+								<select name="f_estado_civ" class="w3-select" ng-model="odontologo.estadocivilUsr">
+									<option value="SOLTERO">SOLTERO</option>
+									<option value="CASADO">CASADO</option>
+									<option value="VIUDO">VIUDO</option>
+									<option value="DIVORCIADO">DIVORCIADO</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Estado:</label></td>
+							<td>
+								<input type="radio" name="Estado" class="w3-select" value="1" ng-model="odontologo.estadoUsr" />Activo<br>
+								<input type="radio" name="Estado" class="w3-select" value="0" ng-model="odontologo.estadoUsr" />Inactivo</td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Hora Entrada:</label></td>
+							<td><input type="time" class="myinput w3-input w3-group w3-center" name="f_hora_entrada" ng-model="odontologo.horaentradaOdontologo"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Hora Salida:</label></td>
+							<td><input type="time" class="myinput w3-input w3-group w3-center" name="f_hora_salida" ng-model="odontologo.horasalidaOdontologo"></td>
+						</tr>
+						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">Número máximo de citas:</label></td>
+							<td><input type="number" class="myinput w3-input w3-group w3-center" min="0" max="5" name="f_numero_maximo" ng-model="odontologo.citamaximaOdontologo"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_numero_maximo.$error.max">El valor no debe ser mayor que 5</div></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_numero_maximo.$error.min">El valor no debe ser menor que 0</div></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<a href="../Administrador.html" class="w3-btn w3-black"><i class="fa fa-arrow-left"></i>Volver</a>
+								<button type="button" class="w3-btn btn-primary" ng-click="actuzalizarOdontologos()" ng-disabled="form4.$invalid" >Actualizar</button>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</form>
+		</div>
+	</body>
 </html>

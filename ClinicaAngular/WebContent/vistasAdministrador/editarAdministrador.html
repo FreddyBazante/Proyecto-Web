@@ -21,6 +21,16 @@
 					<legend>Administradores</legend>	
 					<table>
 						<tr>
+							<td><label class="w3-btn w3-input w3-group w3-center">ID:</label></td>
+							<td>
+								<input type="text" class="myinput w3-input w3-group w3-center" name="f_id" disabled required ng-model="administrador.idUsr">
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form4.f_id.$error.required">ID es requerido</div></td>
+						</tr>
+						<tr>
 							<td><label class="w3-btn w3-input w3-group w3-center">Modo:</label></td>
 							<td>
 								<select name="f_modo" class="w3-select" ng-model="administrador.tipoUsr" required>
