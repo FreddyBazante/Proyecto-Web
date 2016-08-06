@@ -66,8 +66,8 @@ app.controller("administradorControlador", function($scope,$location,AdminAdmini
 				});
 	};
 	
-	$scope.username = $cookies.username;
-    $scope.password = $cookies.password;
+	$scope.nomreUsr = $cookies.nomreUsr;
+    $scope.passwordUsr = $cookies.passwordUsr;
     //la función logout que llamamos en la vista llama a la función
     //logout de la factoria auth
     $scope.logout = function()
