@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Acceso al Sistema</title>
+		<script src="js/angular.min.js" charset="utf-8"></script>
+		<script src="js/angular-animate.min.js" charset="utf-8"></script>
+		<script src="js/angular-route.min.js" charset="utf-8"></script>
+		<script src="js/angular-cookies.min.js" charset="utf-8"></script>
+		<script src="js/app.js" charset="utf-8"></script>
+		<script src="js/AdmLoginCtrl.js" charset="utf-8"></script>
+		<script src="js/AdmLoginSrv.js" charset="utf-8"></script>
+		<script src="js/AdmLoginCtrl.js" charset="utf-8"></script>
+		<script src="js/AdmLoginSrv.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/estilo.css" charset="utf-8"/>
+		<link rel="stylesheet" href="css/w3.css" charset="utf-8"/>
+		<link rel="stylesheet" href="css/template.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome-4.6.3/css/font-awesome.css" />
+	</head>
+	<body ng-app="moduloAplicacion" ng-controller="inicioCtrl" class="w3-sand">
+		<header class="page-header w3-sand">
+			<div class="logo-wrapper w3-center w3-sand">
+				<p>
+					<img alt="" class="logo-wrapper logo  " src="images/logo_fisepn.png" /><br>
+					<img alt="" class="logo-wrapper logo images " src="images/bucalcenter.png" /><br>
+					<label class="w3-center w3-text-blue-grey w3-text-shadow">BUCALCENTER</label>
+				</p>
+			</div>
+		</header>
+		<div align="center">
+			<form name="form1">	
+				<fieldset style="width: 30%" >
+					<legend>ACCESO AL SISTEMA</legend>
+					<label class="w3-text-blue-grey">
+						Bienvenidos al <b>Sistema Bucalcenter</b> <br>Esta área es retringida solo a personal autorizado,<br>
+						proceda a ingresar su nombre de usuario y su password.
+					</label>
+					<table>
+						<tr>
+							<td ><label class="w3-btn w3-blue-grey w3-input w3-group">Modo: </label></td>
+							<td><select ng-model="odontologo.tipoUsr" name="f_modo_login" class="w3-select" required>
+									<option value="O" >ODONTOLOGO </option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="w3-btn w3-blue-grey w3-input w3-group">Usuario: </td>
+							<td><input type="text" ng-model="odontologo.nomreUsr" name="f_user" placeholder="Ingrese su usuario" class="myinput w3-input w3-group" required/>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form1.f_user.$pristine && form1.f_user.$error.required">El usuario es requerido</div></td>
+						</tr>
+						<tr>
+							<td class="w3-btn w3-blue-grey w3-input w3-group">Contraseña: </td>
+							<td><input type="password" ng-model="odontologo.passwordUsr" name="f_passw" placeholder="Ingrese su contraseña" class="myinput w3-input w3-group" required/>
+								
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><div class="msgError" ng-show="form1.f_passw.$pristine && form1.f_passw.$error.required">La contraseña es requerida</div></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<button type="submit" ng-disabled="form1.$invalid" class="w3-btn btn-primary">Ingresar</button>
+							</td>
+						</tr>
+					</table>	
+				</fieldset>
+			</form>	
+		</div>
+		<footer class="w3-sand">
+			Copyright &copy; 2016<br/>Derechos reservados. EPN. <br/> Contactese a freddy.bazante@epn.edu.ec o jesus.guerra@epn.edu.ec
+		</footer>
+	</body>
+</html>

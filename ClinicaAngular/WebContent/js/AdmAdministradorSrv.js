@@ -16,7 +16,7 @@ app.service('AdminAdministradorSrv', function($http){
 		    	error("Error al invocar el servicio");
 		    }				  
 	     )  
-	}
+	};
 	//BUSCAR
 	this.buscarHorarios = function(nombreBusqueda,exito,error) {
 		$http.get("http://localhost:8080/ClinicaAngular/rest/ServicioAdministrador/buscarHorario?nombreBusqueda=" + 
@@ -30,7 +30,7 @@ app.service('AdminAdministradorSrv', function($http){
 		    	console.log("Error " + response);
 		    	error(response.statusText);
 		    }				  
- 	     );  
+ 	     )};  
 	//ACTUALIZAR
 	this.actualizarHorario = function (horario,exito,error){
 		$http.post("http://localhost:8080/ClinicaAngular/rest/ServicioAdministrador/actualizarHorario",
@@ -79,5 +79,4 @@ app.service('AdminAdministradorSrv', function($http){
 		};
 		
  	
-	}
 });
