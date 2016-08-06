@@ -1,6 +1,6 @@
 var app = angular.module("moduloAplicacion");
 
-app.controller("administradorControlador", function($scope,$location,AdminAdministradorSrv){
+app.controller("administradorControlador", function($scope,$location,AdminAdministradorSrv,$cookies, auth){
 	$scope.valorDeBusqueda="";
 	$scope.criterioOrdenH="idHorario";
 	$scope.errorMsg="Resultado";
@@ -65,4 +65,13 @@ app.controller("administradorControlador", function($scope,$location,AdminAdmini
 					$scope.errorMsg = mensajeError;
 				});
 	};
+	
+	$scope.username = $cookies.username;
+    $scope.password = $cookies.password;
+    //la función logout que llamamos en la vista llama a la función
+    //logout de la factoria auth
+    $scope.logout = function()
+    {
+        auth.logout();
+    }
 });

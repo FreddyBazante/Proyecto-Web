@@ -108,16 +108,14 @@ aplicacion.factory("auth", function($cookies,$cookieStore,$location)
 		        }
 		    }
 		});
-		 
-		//creamos el controlador pasando $scope y $http, así los tendremos disponibles
-		app.controller('loginController', function($scope,auth) 
+app.run(function($rootScope, auth)
 		{
-		    //la función login que llamamos en la vista llama a la función
-		    //login de la factoria auth pasando lo que contiene el campo
-		    //de texto del formulario
-		    $scope.login = function()
+		    //al cambiar de rutas
+		    $rootScope.$on('$routeChangeStart', function()
 		    {
-		        auth.login($scope.username, $scope.password);
-		    }
-		 
-		});
+		        //llamamos a checkStatus, el cual lo hemos definido en la factoria auth
+		        //la cuál hemos inyectado en la acción run de la aplicación
+		        auth.checkStatus();
+		    })
+		})
+		
