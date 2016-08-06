@@ -3,7 +3,7 @@ var aplicacion = angular.module("moduloAplicacion", ["ngRoute","ngAnimate","ngCo
 aplicacion.config(function($routeProvider){
 	 $routeProvider
 			 .when("/", {
-		         controller: "inicioCtrl",
+		         controller: "loginController",
 		         controllerAs: "vm",
 		         templateUrl: "bienvenido.html"
 			 })
@@ -108,7 +108,7 @@ aplicacion.factory("auth", function($cookies,$cookieStore,$location)
 		        }
 		    }
 		});
-app.run(function($rootScope, auth)
+aplicacion.run(function($rootScope, auth)
 		{
 		    //al cambiar de rutas
 		    $rootScope.$on('$routeChangeStart', function()
