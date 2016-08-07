@@ -2,7 +2,7 @@
     <wb-module deploy-name="ClinicaAngular">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="ClinicaAngular"/>
         <property name="java-output-path" value="/ClinicaAngular/build/classes"/>
+        <property name="context-root" value="ClinicaAngular"/>
     </wb-module>
 </project-modules>
